@@ -26,7 +26,7 @@ else{
 <!DOCTYPE html>
     <body>
         <div>
-        
+         <p><?php print("{$err}<br/>"); ?></p>
         </div>
     </body>
 </html>
