@@ -20,7 +20,7 @@ try{
 catch(PDOException $e){
     $errcode = $e -> getCode();
     $errmessage = $e -> getMessage();
-    $err = $errcode + $errmessage;
+    $err = ("{$errcode} + {$errmessage}");
 }
 
 
