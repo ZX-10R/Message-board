@@ -1,7 +1,7 @@
 <?php
     $errcode = "";
     try{
-        require_once('./gitignore/DBinfo.php');
+        require_once('./ignorefiles/DBinfo.php');
 
         $pdo = new PDO(DBinfo::DSN, DBinfo::USER, DBinfo::PASSWORD);
         $errmessage = "connected";
