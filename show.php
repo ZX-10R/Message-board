@@ -1,6 +1,15 @@
 <?php
-require_once('dbconn.php');
+$err = "";
+try{
+    require_once("./ignorefiles/DBinfo.php");
+    $pdo = new PDO(DBinfo::DSN, DBinfo::USER, DBinfo::PASSWORD);
 
+}
+catch(PDOException $e){
+    $errcode = $e -> getCode();
+    $errmessage = $e -> getMessage();
+    $err = $errcode + $errmessage;
+}
 $sql = 'SELECT * FROM posts ORDER BY created DESC';
 $statement = $pdo->query($sql);
 
@@ -12,8 +21,7 @@ else{
 	print("no data.<br/>");
 }
 
- 
-
+ $pdo = null;
 ?>
 <!DOCTYPE html>
     <body>
