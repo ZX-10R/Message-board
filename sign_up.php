@@ -2,6 +2,7 @@
 session_start();
 $location = './insert.php';
 require_once("dbconn.php");
+
 if(!empty($_POST)){
 	if($_POST['name'] == ""){
 		$error['name'] = 'blank';
@@ -27,6 +28,7 @@ if (!empty($error)){
 	header("Location: {$location}");
     exit();
 }
+
 
 ?>
 <!DOCTYPE html>
