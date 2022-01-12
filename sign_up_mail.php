@@ -1,6 +1,6 @@
 <?php
 session_start();
-require('dbconnect.php');
+require('dbconn.php');
 if (!isset($_SESSION['join'])) {
     header ('Location: test2.php');
     exit();
