@@ -1,9 +1,8 @@
 <?php
 $err = "";
 try{
-    require_once("./ignorefiles/DBinfo.php");
+    require_once("dbconn.php");
     $pdo = new PDO(DBinfo::DSN, DBinfo::USER, DBinfo::PASSWORD);
-
 
     $sql = 'SELECT * FROM posts ORDER BY created DESC';
     $statement = $pdo->query($sql);
@@ -28,8 +27,20 @@ catch(PDOException $e){
 ?>
 <!DOCTYPE html>
     <body>
+        
+        <h2>Message-Board</h2>
+        <p>_______________________________________________________________________________________________________</p>
         <div>
-         <p><?php print("{$err}<br/>"); ?></p>
-        </div>
+         <p><?php print("<p>{$err}</p><br/>"); ?></p>
+         </div>
+        <p>_______________________________________________________________________________________________________</p>
+        <h3>POST form</h3>
+         <form action='' method ="post">
+            <p>name</p><input type= "text" name ="name">
+            <p>message</p><textarea name ="message" cols="50" rows="10" maxlength="1000"></textarea>
+            <br/>
+            <input type="submit" value ="submit" >
+         </form>
+        
     </body>
 </html>
